@@ -104,4 +104,37 @@ function load() {
 
     let totalEl = document.getElementById("total");
     if (totalEl) totalEl.innerText = total;
+
+    // admin uchun yangilash: nechta foydalanuvchi kundalikni ishlatgan
+    updateAdminStats();
+}
+
+// yangi funksiya: admin panel uchun faol foydalanuvchilar sonini hisoblaydi
+function updateAdminStats() {
+    let current = localStorage.getItem("login");
+    let adminDiv = document.getElementById("adminStats");
+    let usersCountEl = document.getElementById("usersCount");
+    if (!adminDiv || !usersCountEl) return;
+
+    if (current === "admin") {
+        // localStorage ichida "data_" bilan boshlangan kalitlarni sanaymiz;
+        // faqat yozuvi (massiv uzunligi) > 0 bo'lganlarni hisoblaymiz
+        let cnt = 0;
+        for (let i = 0; i < localStorage.length; i++) {
+            let key = localStorage.key(i);
+            if (!key) continue;
+            if (key.startsWith("data_")) {
+                try {
+                    let arr = JSON.parse(localStorage.getItem(key)) || [];
+                    if (Array.isArray(arr) && arr.length > 0) cnt++;
+                } catch (e) {
+                    // ignore malformed
+                }
+            }
+        }
+        usersCountEl.innerText = cnt;
+        adminDiv.classList.remove("hidden");
+    } else {
+        adminDiv.classList.add("hidden");
+    }
 }

@@ -22,6 +22,11 @@
 <div class="box1 hidden" id="appBox">
     <h1>📒 Kundalik — <span id="currentUser"></span></h1>
 
+    <!-- admin stats (faqat admin ko'radi) -->
+    <div id="adminStats" class="hidden" style="background:#f1f1f1;padding:8px;border-radius:6px;margin-bottom:8px;">
+        <strong>Admin:</strong> Faol foydalanuvchilar soni: <span id="usersCount">0</span>
+    </div>
+
     <input id="task" placeholder="Bugun nima qildim?"></input>
     <input type="number" id="money" placeholder="Bugun qancha pul soldim?">
     <button onclick="save()">Saqlash</button>
