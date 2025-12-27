@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kundalik</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+     <div class="box" id="loginBox">
+    <h2 class="title">🔐 Kirish / Ro'yxatdan o'tish</h2>
+    <input id="user" placeholder="Login">
+    <input id="pass" type="password" placeholder="Parol">
+    <div class="button__container" style="margin-top:8px;">
+        <button onclick="login()">Kirish</button>
+        <button onclick="register()" style="margin-left:8px">Ro'yxatdan o'tish</button>
+    </div>
+</div>
+
+<!-- APP -->
+<div class="box1 hidden" id="appBox">
+    <h1>📒 Kundalik — <span id="currentUser"></span></h1>
+
+    <input id="task" placeholder="Bugun nima qildim?"></input>
+    <input type="number" id="money" placeholder="Bugun qancha pul soldim?">
+    <button onclick="save()">Saqlash</button>
+
+    <h3>📊 Oylik jami: <span id="total">0</span> so'm</h3>
+
+    <h3>📅 Yozuvlar</h3>
+    <div id="list"></div>
+
+    <button onclick="logout()" style="background:#dc3545">Chiqish</button>
+</div>
+
+<script src="./script.js"></script>
+</body>
+</html>
