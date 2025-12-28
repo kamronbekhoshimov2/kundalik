@@ -128,3 +128,90 @@ button:hover {
 #pass {
     margin-top: 20px;
 }
+.span_admin{
+    color: #000;
+}
+#adminStats{
+    max-width:760px;
+    margin:14px auto;
+    background:#fff;
+    padding:18px;
+    border-radius:12px;
+    box-shadow:0 8px 30px rgba(0,0,0,0.06);
+    color:#222;
+    box-sizing:border-box;
+}
+
+/* overall summary */
+#adminOverall{ margin-bottom:12px; font-size:0.95em; color:#333; }
+
+/* admin users list layout */
+#adminUsersList{ padding:0; margin:0; list-style:none; }
+
+/* each list item */
+#adminUsersList > li{
+    margin-bottom:10px;
+    padding:6px;
+    border-radius:8px;
+}
+
+/* clickable user button (left column entry) */
+.admin-user-btn{
+    display:flex !important;
+    align-items:center !important;
+    justify-content:space-between !important;
+    gap:8px !important;
+    width:100%;
+    padding:8px 10px !important;
+    border:1px solid #eee !important;
+    border-radius:8px !important;
+    background:#fff !important;
+    cursor:pointer !important;
+    box-sizing:border-box;
+}
+
+/* ensure name takes remaining space and meta stays on one line */
+.admin-user-btn span:first-child{ flex:1; font-weight:600; white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }
+.admin-user-btn span:last-child{ white-space:nowrap; margin-left:8px; font-size:0.92em; color:#444; }
+
+/* arrow button */
+.admin-arrow{
+    border:0;
+    background:transparent;
+    cursor:pointer;
+    font-size:18px;
+    padding:4px;
+    margin-left:6px;
+    color:#666;
+    transition:transform .18s ease;
+    width: auto;
+}
+
+/* rotate when open via class (script can toggle .open) */
+.admin-arrow.open{ transform:rotate(90deg); }
+
+/* detail panel */
+.admin-detail{
+    display:none;
+    margin-top:8px;
+    padding:10px;
+    border-radius:8px;
+    background:#fbfbfb;
+    border:1px solid #f0f0f0;
+    max-height:320px;
+    overflow:auto;
+}
+
+/* cards inside detail */
+.admin-detail > div{
+    background:#fff;
+    border:1px solid #eee;
+    border-radius:8px;
+    padding:8px;
+    margin-bottom:8px;
+}
+
+/* small responsive tweak */
+@media (max-width:640px){
+    #adminStats{ padding:14px; margin:10px; }
+    .admin-user-btn{ width:100%; }}
